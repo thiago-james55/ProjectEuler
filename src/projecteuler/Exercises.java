@@ -317,6 +317,52 @@ public class Exercises {
         
         
         
+    } // FINAL E05
+    
+    public static void E06() {
+        
+    //Sum square difference
+
+    //Problem 6
+    //The sum of the squares of the first ten natural numbers is,
+
+    //The square of the sum of the first ten natural numbers is,
+
+    //Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is .
+
+    //Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+    
+    int somaQuadrado1 = 0;
+    long somaQuadrado2 = 0;
+    
+    for (int somaQuadradoIndividual = 1; somaQuadradoIndividual <= 100; somaQuadradoIndividual++) {
+        
+        System.out.println(somaQuadradoIndividual + " ao quadrado é " + Math.pow(somaQuadradoIndividual, 2));
+        
+        somaQuadrado1 += Math.pow(somaQuadradoIndividual, 2);
+        
+        somaQuadrado2 += somaQuadradoIndividual;
+        
+        System.out.println("-------------------------------------------------");
+        
+        
+        
+        
+    }
+        
+        System.out.println("A soma de 1 a 100 é : " + somaQuadrado2);
+        somaQuadrado2 = (long) Math.pow(somaQuadrado2, 2);
+        
+        System.out.println("-------------------------------------------------");
+        
+        System.out.println("A soma de 1 a 100 individuais ao quadrado é : " + somaQuadrado1);
+        System.out.println("A soma de 1 a 100 quadrado é : " + somaQuadrado2);
+        
+        System.out.println("-------------------------------------------------");
+        
+        System.out.println("A diferença entre os dois é : " + (somaQuadrado2 - somaQuadrado1) );
+    
+        
     }
     
     
