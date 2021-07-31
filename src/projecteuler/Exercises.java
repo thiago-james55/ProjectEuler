@@ -6,6 +6,7 @@
 package projecteuler;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -200,5 +201,77 @@ public class Exercises {
         } // Final Mostrar ArraList
     
     } // Final E03
+    
+    public static void E04() {
+        
+        //Largest palindrome product
+        
+        //A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+
+        //Find the largest palindrome made from the product of two 3-digit numbers.
+        
+        // 3-digit number Max 999*999 = 998001
+        
+        int numero;
+        
+        String testeNumero;
+        String testeNumero2;
+        
+        ArrayList<Integer> palindromos = new ArrayList<>();
+        
+        
+        
+        for (int n1 = 100; n1 < 1000; n1++) { // contador do primeiro numero
+            
+            for (int n2 = 100; n2 < 1000; n2++) { // contador do segundo numero
+                
+                numero = n1*n2; // atribui a multiplicação do numero 
+                testeNumero = Integer.toString(numero); // atribui o numero para String para comparar os CharAt
+                testeNumero2 = "";
+                
+                for (int inverter = (testeNumero.length() - 1) ; inverter >= 0; inverter-- ) { // atribui o numero invertido ao testeNumero2
+                    
+                    testeNumero2 += testeNumero.charAt(inverter);
+                    
+                    
+                if (testeNumero.equals(testeNumero2)) {
+                
+                    palindromos.add(numero); // adiciona o numero na arraylist
+                    
+                }
+                    
+                    
+                }
+                
+                Collections.sort(palindromos);
+                
+                
+                
+                
+                
+                
+                
+                //if ( (testeNumero.charAt(0) == testeNumero.charAt(testeNumero.length()-1)) && (testeNumero.charAt(1) == testeNumero.charAt(testeNumero.length()-2)) && (testeNumero.charAt(2) == testeNumero.charAt(testeNumero.length()-3)) ) { // verifica se o primeiro e  o segundo caracter é igual ao ultimo
+               
+                //    System.out.println(n1 + " * " + n2 + " = " + testeNumero);
+                
+                             
+                //}
+                
+                
+            }
+            
+            
+            
+            
+        }
+        
+                System.out.println(palindromos.get(palindromos.size() - 1));
+        
+      // Minha primeira resposta foi errado pois eu estava somente dando system out nos palindromos n1 * n2 ai no final aparecia um palindromo da ultima casa , porem em uma multiplicação anterior tinha um palindromo maior!
+      // Por isso fiz um arraylist adicionando todos os palindromos e posteriormente organizando-os sort() para arrumar em ordem crescente!
+    } // Final E04
+    
+    
     
 }
