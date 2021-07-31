@@ -269,8 +269,55 @@ public class Exercises {
                 System.out.println(palindromos.get(palindromos.size() - 1));
         
       // Minha primeira resposta foi errado pois eu estava somente dando system out nos palindromos n1 * n2 ai no final aparecia um palindromo da ultima casa , porem em uma multiplicação anterior tinha um palindromo maior!
-      // Por isso fiz um arraylist adicionando todos os palindromos e posteriormente organizando-os sort() para arrumar em ordem crescente!
+      // Por isso fiz um arraylist adicionando todos os palindromos e posteriormente organizando-os sort() para arrumar em ordem crescente
     } // Final E04
+    
+    public static void E05() {
+        
+        //Smallest multiple
+        //Problem 5
+        //2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+        //What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+        
+        // Vou começar com o numero 20000 pois é 20x100
+        // 1 tentativa usar um for de 1 a 20 para testar a divisibilidade do numero , caso em 1 dos for de diferente de 0 dar continue
+        
+        NUMERO_TESTADO: for (long numero = 1; numero <= 9999999999999999l; numero++) {
+            
+            
+            for (int intervalo = 1; intervalo <= 20; intervalo++) {
+                
+                if (numero % intervalo != 0) { // 
+                    
+                    continue NUMERO_TESTADO;
+                    
+                } 
+                
+                if (intervalo == 20) {
+                    
+                    
+                    for (int intervalo2 = 1; intervalo2 <= 20; intervalo2++) {
+                        
+                        System.out.println(numero + " / " + intervalo2 + " = " + (numero/intervalo2));
+                        
+                        
+                        
+                    }
+                    
+                    System.out.println("O menor numero divisivel por 1 a 20 sem resto é = " + numero + "!");
+                    
+                    break NUMERO_TESTADO;
+                    
+                }
+                
+            }
+            
+            
+        }
+        
+        
+        
+    }
     
     
     
