@@ -121,12 +121,12 @@ public class Exercises {
         
         long numero = 600851475143l;
         
-        Range: for (int i = 12; i < 100000000; i++) {
+        Range: for (int i = 12; i < 100000000; i++) { // range dos numeros que queremos sabem se sao primos
            
            String testepar = Integer.toString(i);
            int teste = Integer.parseInt(Character.toString(testepar.charAt(testepar.length()-1)));
                       
-           //Teste Multiplo de 2
+           //Teste Multiplo de 2 - numeros multiplos de 2 nao sao primos - nesse caso testamos o ultimo charAt se for 0,2,4,6,8 da continue pois numeros com esses finais sao multiplos de 2
            if ( teste == 0 || teste == 2 || teste == 4 || teste == 6 || teste == 8 ) {
                 
                 continue;
@@ -142,19 +142,19 @@ public class Exercises {
                 
                 //System.out.println(primos.get(c));
                 
-                if (i % primos.get(c) == 0) {
+                if (i % primos.get(c) == 0) { // se o numero (i) for divisivel por algum primo da arraylist , cancela e da continue
                     
                     
                     continue Range;
 
                 }
                 
-                if (i < Math.pow(primos.get(c), 2) ) {
+                if (i < Math.pow(primos.get(c), 2) ) { // se o numero (i) for menor que o primo ao quadrado na arraylist entao ele eh considerado primo
                     
                     //System.out.println(i);
                     primos.add(i);
                     
-                    math = (long) Math.pow(i, 2);
+                    math = (long) Math.pow(i, 2); // se i ao quadrado por maior que o numero saberemos que é o numero anterior
                     //System.out.println(math);
                                                             
                     if ( numero < math ) {
@@ -363,8 +363,99 @@ public class Exercises {
         System.out.println("A diferença entre os dois é : " + (somaQuadrado2 - somaQuadrado1) );
     
         
-    }
+    } // FINAL E06
     
     
+    
+    public static void E07() {
+        
+        
+    
+        
+    //10001st prime
+    
+    //Problem 7
+    
+    //By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+    //What is the 10 001st prime number?
+
+    // Aqui fica mais facil pois ja tinha criado um algoritmo de reconhecimento de numeros primos no exercicio 03; 
+    
+    
+    ArrayList <Long> primos = new ArrayList();
+        
+        
+        //primeiros primos base
+        primos.add(2l);
+        primos.add(3l);
+        primos.add(5l);
+        primos.add(7l);
+        primos.add(11l);
+    
+        
+        
+     Range: for (long i = 12; i < 1000000000000000000l; i++) { // range dos numeros que queremos sabem se sao primos
+           
+           String testepar = Long.toString(i);
+           int teste = Integer.parseInt(Character.toString(testepar.charAt(testepar.length()-1)));
+                      
+           //Teste Multiplo de 2 - numeros multiplos de 2 nao sao primos - nesse caso testamos o ultimo charAt se for 0,2,4,6,8 da continue pois numeros com esses finais sao multiplos de 2
+           if ( teste == 0 || teste == 2 || teste == 4 || teste == 6 || teste == 8 ) {
+                
+                continue;
+                
+            } 
+            
+            //Teste Divisivel pelos Primos da ArrayList
+            
+            long i_double = i;
+            long math;
+                     
+            for (int c= 0; c < primos.size(); c++) {
+                
+                //System.out.println(primos.get(c));
+                
+                if (i % primos.get(c) == 0) { // se o numero (i) for divisivel por algum primo da arraylist , cancela e da continue
+                    
+                    
+                    continue Range;
+
+                }
+                
+                if (i < Math.pow(primos.get(c), 2) ) { // se o numero (i) for menor que o primo ao quadrado na arraylist entao ele eh considerado primo
+                    
+                    //System.out.println(i);
+                    primos.add(i);
+                    
+                        if (primos.size() == 10002) { // testa se o tamanho da arraylist com primos é o numero do nosso exercicio
+                        
+                            break Range;
+                            
+                        }
+                        
+                    continue Range;
+                        
+                        
+                    
+    
+                } // final do teste de caso primo seja menor que ultimo primo ao quadrado
+                
+                
+    
+             } // Final do For Primos Size
+            
+            
+     } //Final Range
+                
+                
+                
+                    for (int contador = 0; contador <= primos.size() - 2; contador++) { // mostra os primos
+                    
+                    System.out.println( (contador + 1) + "° Numero Primo: " + primos.get(contador));
+                    
+                    }
+                
+        
+    } // FINAL E07
     
 }
