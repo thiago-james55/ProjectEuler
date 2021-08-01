@@ -17,7 +17,7 @@ public class ProjectEuler {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Exercises.E07();
+        Exercises.E08();
         
         
         
