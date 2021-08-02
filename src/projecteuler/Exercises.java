@@ -571,6 +571,79 @@ public class Exercises {
         
         
         
-    }
+    } // FINAL E08
     
+    public static void E09() {
+        
+        //Special Pythagorean triplet
+        
+        //Problem 9
+        //A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
+
+        //a2 + b2 = c2
+        //For example, 32 + 42 = 9 + 16 = 25 = 52.
+
+        //There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+        //Find the product abc.
+        
+        // a2 + b2 = c2 == Aqui esta varrendo ao contrario do C para baixo pois c 
+        
+        FOR_I : for (int i = 1000; i >= 0; i--) { // FOR DO C
+            
+            int c = (int) Math.pow(i,2);
+            
+            FOR_J: for (int j = 1000; j >= 0; j--) { // FOR DO B
+                
+                int b = (int) Math.pow(j,2);
+                
+                FOR_K: for (int k = 1000; k >= 0; k--) { // FOR DO A
+                    
+                    int a = (int) Math.pow(k,2);
+                    
+                    int d = i+j+k;
+                    
+                    
+                    if ( (a + b) == c) {
+                        
+                    long e = (long) (k*j) * i;
+                    
+                        if ( (c > b) && (b > a )) { // 
+                            
+                            
+                            //System.out.println(k + "² + " + j + "² = " + i + "²" ); // RESULTADOS
+                            
+                            if (d == 1000) {
+                                
+                                System.out.println("-----------------------------");
+                                System.out.println("A soma dos numeros de pitagoras que dão 1000 é:");
+                                System.out.println(k + "² + " + j + "² = " + i + "²" ); // RESULTADOS
+                                System.out.println("O produto dos 3 numeros são: " + e);
+                                System.out.println("-----------------------------");
+                                
+                                
+                            }
+                            
+                            
+                            
+                        }
+                        
+                    }
+                    
+                    
+                       
+                        //System.out.println(i + ">" + j + ">" + k );
+                        
+                        
+                    
+                    
+                    
+                } // FINAL K
+                
+                
+            } // FINAL J
+            
+        } // FINAL I
+        
+                
+    }
 }
