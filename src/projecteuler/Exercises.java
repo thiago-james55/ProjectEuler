@@ -645,5 +645,76 @@ public class Exercises {
         } // FINAL I
         
                 
-    }
+    } public static void E10() {
+        
+        //The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+        //Find the sum of all the primes below two million.
+        //Mais um exercicio utilizando numeros primos , neste caso é só criar uma ArrayList até 2 milhoes e soma-la
+        
+        ArrayList <Integer> primos = new ArrayList();
+        
+        
+        //primeiros primos base
+        primos.add(2);
+        primos.add(3);
+        primos.add(5);
+        primos.add(7);
+        primos.add(11);
+        //primos.add(13);
+        
+                
+        Range: for (int i = 12; i < 2000000; i++) { // range dos numeros que queremos sabem se sao primos
+           
+           String testepar = Integer.toString(i); // numero to String
+           int teste = Integer.parseInt(Character.toString(testepar.charAt(testepar.length()-1))); // Pega o ultimo char do numero e testa se é PAR
+                      
+           //Teste Multiplo de 2 - numeros multiplos de 2 nao sao primos - nesse caso testamos o ultimo charAt se for 0,2,4,6,8 da continue pois numeros com esses finais sao multiplos de 2
+           if ( teste == 0 || teste == 2 || teste == 4 || teste == 6 || teste == 8 ) {
+                
+                continue;
+                
+            } 
+            
+            //Teste Divisivel pelos Primos da ArrayList
+            
+            long i_double = i;
+            
+            long math;
+                     
+            for (int c= 0; c < primos.size(); c++) {
+                
+                
+                if (i % primos.get(c) == 0) { // se o numero (i) for divisivel por algum primo da arraylist , cancela e da continue
+                    
+                    
+                    continue Range;
+
+                }
+                
+                if (i < Math.pow(primos.get(c), 2) ) { // se o numero (i) for menor que o primo ao quadrado na arraylist entao ele eh considerado primo
+                    
+                    //System.out.println(i);
+                    primos.add(i);
+                    System.out.println(i);
+                    continue Range;
+                    
+                }
+                
+            } // Teste Divisivel por primo
+            
+            
+            
+        }
+            long total = 0;
+            
+            for (int soma = 0; soma < primos.size(); soma++) {
+                
+                total += primos.get(soma);
+                
+                
+            }
+            
+            System.out.println("A soma de numeros primos antes de 2 milhoes é : " + total);
+        
+    }//E10
 }
