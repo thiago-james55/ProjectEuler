@@ -1110,49 +1110,38 @@ public class Exercises {
 
         What is the value of the first triangle number to have over five hundred divisors?   */
         
-        long n = 1;
-        int incremento = 2;
-        int divisores = 0;
-        int divisor;
-        int maxDivisor = 0;
+        long divisores = 0;
+        long maxDivisores = 0;
+        int range = 0;
+        long localNumber = 0;
         
-        
-        NUMERO: do  { // faça enquanto divisores for diferente de 500;
+        do {
             
-            divisores = 0; // zera a quantidade de divisoes do n
-            divisor = 0;
+            range++;
             
-            do { // testa os divisores
-                
-                divisor++;
-                
-                if (n % divisor == 0) { // adiciona a divisores caso seja divivel
-                    
-                    divisores++;
-                    
-                }
-                
-                
-                //System.out.println(n + " / " + divisor + " = " + (n/divisor));
-                
-            } while (divisor != n);
+            localNumber = Operações.NumeroTriangular(range);
             
+            divisores = Operações.NumeroDeDivisores(localNumber);
                         
-            n += incremento;
-            incremento *= 2;
             
-            if (divisores > maxDivisor) {
+            if (divisores > maxDivisores) {
                 
-                maxDivisor = divisores;
-                System.out.println(maxDivisor);
-                
-                
+                maxDivisores = divisores;
+                System.out.println("O numero " + (Operações.NumeroTriangular(range)) + " tem " + divisores + " divisores!");
                 
             }
-            System.out.println(n);
-        } while (divisores != 500);
+            
+            if (divisores >= 500) {
+                
+                break;
+                
+            }
+            
+            
+                    
+        } while (divisores <= 500);
         
-        System.out.println("O primeiro numero triangulo a ter 500 divisores é : " + n);
+               
         
         
     }
