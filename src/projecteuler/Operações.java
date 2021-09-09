@@ -124,4 +124,23 @@ public class Operações {
         return divisores;
     }
     
+    public static long CadeiaSequeciaDeCollatz(long numero) { // input que retornara quantas cadeias tem qualquer numero
+        
+        if (numero == 1) { // verifica se é o 1 que é o ultimo
+            
+            return 1;
+            
+        } else if (numero % 2 == 0){ // verifica se é par
+            
+            return 1 + CadeiaSequeciaDeCollatz(numero/2);
+            
+        } else { // else impar
+                        
+            return 1 + CadeiaSequeciaDeCollatz( (numero*3) + 1);
+                        
+        }
+        
+                
+       
+    }
 }
