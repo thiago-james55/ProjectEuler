@@ -1441,5 +1441,63 @@ public class Exercises {
         System.out.println("Execution time in milliseconds: " + (timeElapsed)) ;
         
     }
+    
+    public static void E15() {
+        
+        /*
+        Lattice paths
+        
+        Problem 15
+        Starting in the top left corner of a 2×2 grid, and only being able to move 
+        to the right and down, there are exactly 6 routes to the bottom right corner.
+
+        How many such routes are there through a 20×20 grid? */
+        
+        /*
+        Após um pouco de estudo a pergunta acima se define em numeros biominais
+        Video que descreve a formula que usarei aqui https://www.youtube.com/watch?v=hIiiAiOrKE8
+        
+        O numero de "passos" necessarios para finalizar o caminho é sempre (LINHAS+COLUNAS) que equivale ao n! na formula em https://pt.wikipedia.org/wiki/Coeficiente_binomial
+        
+        O numero de "alternativas" é sempre linhas k! e colunas (k!)
+        
+        Consideremos o exemplo acima 2x2
+        
+         n!     =       (2+2)!     =  24
+        ---
+        k!(k!)  =       2! depois resto 2!      =   4
+        
+        24/2 = 12 / 2 = 6 que é a resposta do nosso exemplo
+        
+        Ou seja 24 pelo primeiro k!(2!) = 12
+        Depois 12 dividido pelo segundo k!(2!) = 6
+              
+        
+        */
+        
+        BigInteger linhas = new BigInteger("20");
+        BigInteger colunas = new BigInteger("20");
+        BigInteger caminhos;
+        
+        BigInteger n = linhas.add(colunas);
+        
+                
+        n = Operações.FatorialRecursivo(n);
+        
+        System.out.println(Operações.FatorialRecursivo(linhas));
+        System.out.println(Operações.FatorialRecursivo(colunas));
+        
+                       
+                
+        caminhos = n.divide(Operações.FatorialRecursivo(linhas));
+        caminhos = caminhos.divide(Operações.FatorialRecursivo(colunas));
+                       
+        
+        System.out.println("O numero de caminhas de " + linhas + "x" + colunas + " é = " + caminhos);
+        
+                
+        
+        
+    }
             
 }
